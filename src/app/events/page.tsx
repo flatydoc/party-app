@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout/Layout";
 import { IEvent } from "@/core/types";
 import { getAll } from "@/modules/Events/core/services/events.service";
-import { EventsPage } from "@/pages/EventsPage/EventsPage";
+import EventsPage from "@/pages/EventsPage/EventsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

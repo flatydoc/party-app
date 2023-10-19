@@ -1,4 +1,4 @@
-import { EventPage } from "@/pages/EventPage/EventPage";
+import EventPage from "@/pages/EventPage/EventPage";
 import { Metadata } from "next";
 
 type Props = {

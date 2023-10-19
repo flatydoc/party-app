@@ -1,4 +1,4 @@
-import { ArtistsPage } from "@/pages/ArtistsPage/ArtistsPage";
+import ArtistsPage from "@/pages/ArtistsPage/ArtistsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

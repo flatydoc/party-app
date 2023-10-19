@@ -7,7 +7,7 @@ interface EventProps {
   event: IEvent;
 }
 
-export const Event: FC<EventProps> = ({ event }) => {
+const Event: FC<EventProps> = ({ event }) => {
   return (
     <Link className={classes.event} href={`events/${event.id.toString()}`}>
       <h4>{event.title}</h4>
@@ -16,3 +16,5 @@ export const Event: FC<EventProps> = ({ event }) => {
     </Link>
   );
 };
+
+export default Event;

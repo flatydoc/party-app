@@ -1,4 +1,4 @@
-import { SignUpPage } from "@/pages/SignUpPage/SignUpPage";
+import SignUpPage from "@/pages/SignUpPage/SignUpPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

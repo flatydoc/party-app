@@ -1,9 +1,9 @@
 import { Layout } from "@/components/Layout/Layout";
 
-export const ArtistsPage = () => {
+export default function ArtistsPage() {
   return (
     <Layout>
       <div>ArtistsPage</div>
     </Layout>
   );
-};
+}
