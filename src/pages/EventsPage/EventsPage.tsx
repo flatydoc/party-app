@@ -1,6 +1,5 @@
 import { Layout } from "@/components/Layout/Layout";
 import { IEvent } from "@/core/types";
-import { Events } from "@/modules/Events/Events";
 import Link from "next/link";
 import { FC } from "react";
 import Event from "./components/ui/Event/Event";
