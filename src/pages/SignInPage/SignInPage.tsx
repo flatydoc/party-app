@@ -1,7 +1,7 @@
-export const SignInPage = () => {
+export default function SignInPage() {
   return (
     <>
       <div>SignIn</div>
     </>
   );
-};
+}

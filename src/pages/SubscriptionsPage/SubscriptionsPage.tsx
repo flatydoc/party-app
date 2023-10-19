@@ -1,9 +1,9 @@
 import { Layout } from "@/components/Layout/Layout";
 
-export const SubscriptionsPage = () => {
+export default function SubscriptionsPage() {
   return (
     <Layout>
       <div>SubscriptionsPage</div>
     </Layout>
   );
-};
+}

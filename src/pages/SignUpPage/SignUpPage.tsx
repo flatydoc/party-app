@@ -1,5 +1,5 @@
 import { Registration } from "@/modules/Registration/Registration";
 
-export const SignUpPage = () => {
+export default function SignUpPage() {
   return <>{<Registration />}</>;
-};
+}

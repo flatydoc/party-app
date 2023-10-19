@@ -2,7 +2,7 @@ import Image from "next/image";
 import classes from "./HomePage.module.scss";
 import { Layout } from "@/components/Layout/Layout";
 
-export const HomePage = () => {
+export default function HomePage() {
   return (
     <Layout>
       <div>
@@ -17,4 +17,4 @@ export const HomePage = () => {
       </div>
     </Layout>
   );
-};
+}
