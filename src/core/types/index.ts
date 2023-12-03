@@ -1,29 +1,29 @@
 export interface IUser {
   id: number;
   name: string;
-  emeil: string;
+  email: string;
   isAdmin: boolean;
   isActivated: boolean;
-  events: IEvent | null;
-  artists: IArtist | null;
 }
 
 export interface ICategory {
   id: number;
   name: string;
+  icon: string;
+  events?: IEvent[];
 }
 
 export interface IEvent {
   id: number;
   title: string;
-  text: string;
+  description: string;
   place: string;
   price: number;
-  posterUrl: string;
-  photos: string[];
-  users: IUser | null;
-  category: ICategory | null;
-  artists: IArtist | null;
+  posterUrl?: string;
+  photos?: string[];
+  users?: IUser[] | null;
+  category: ICategory;
+  artists: IArtist[] | null | string;
 }
 
 export interface IArtist {
@@ -31,7 +31,8 @@ export interface IArtist {
   name: string;
   surname: string;
   nickname: string;
+  bio: string;
   city: string;
-  users: IUser | null;
-  events: IEvent | null;
+  users: IUser[] | null;
+  events: IEvent[] | null;
 }

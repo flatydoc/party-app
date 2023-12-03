@@ -1,34 +1,29 @@
-import { api } from "@/core/services/api.service";
-import { authApi } from "@/core/services/auth.service";
-import { IEvent } from "@/core/types";
+import { api } from "@/core/services";
+// import { IEvent } from "@/core/types";
 
-export const getAll = async () => {
-  const { data } = await api.get<IEvent[]>(`/events/getAll`);
-  return data;
+// export const addEvent = async (data: IEvent) => {
+//   try {
+//     const response = await api.post("/events/add", data);
+//     return response.data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+export const getAllEvents = async () => {
+  try {
+    const response = await api.get("/events/getAll");
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const getById = async (id: number) => {
-  const { data } = await api.get<IEvent>(`/events/${id}`);
-  return data;
+export const getEventsBySearch = async (search: string) => {
+  try {
+    const response = await api.get(`/events/getBySearch?q=${search}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
-
-export const getEventsByUserId = async () => {
-  const { data } = await authApi.get<IEvent[]>(`getEventsByUserId`);
-  return data;
-};
-
-// export const addEvent = (data: IEvent) => {
-//   return authApi.post("/events/add", data);
-// };
-
-// export const editEvent = (data: IEvent) => {
-//   return authApi.put(`/events/edit`, data);
-// };
-
-// export const removeEvent = (id: number) => {
-//   return authApi.delete(`/events/${id}`);
-// };
-
-// export const subscribe = (id: number) => {
-//   return authApi.put(`/events/subscribe`, id);
-// };

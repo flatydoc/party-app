@@ -1,5 +1,7 @@
-import { Registration } from "@/modules/Registration/Registration";
+import { SignUp } from "@/modules/SignUp/SignUp";
+import { NextPage } from "next";
 
-export default function SignUpPage() {
-  return <>{<Registration />}</>;
-}
+const SignUpPage: NextPage = () => {
+  return <SignUp />;
+};
+export default SignUpPage;

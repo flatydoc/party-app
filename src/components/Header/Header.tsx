@@ -1,23 +1,12 @@
-"use client";
-import Link from "next/link";
 import { Button } from "primereact/button";
 import classes from "./Header.module.scss";
-import { useEffect } from "react";
+import { Navigation } from "./Navigation/Navigation";
 
 interface HeaderProps {
-  sidebarVisible: boolean;
   sidebarActiveHandler: () => void;
 }
 
-export const Header = ({
-  sidebarVisible,
-  sidebarActiveHandler,
-}: HeaderProps) => {
-  
-  useEffect(() => {
-    document.body.style.overflow = sidebarVisible ? "hidden" : "unset";
-  }, [sidebarVisible]);
-
+export const Header = ({ sidebarActiveHandler }: HeaderProps) => {
   return (
     <header className={classes.header}>
       <Button
@@ -28,6 +17,7 @@ export const Header = ({
         text
         aria-label="Filter"
       />
+      <Navigation />
     </header>
   );
 };

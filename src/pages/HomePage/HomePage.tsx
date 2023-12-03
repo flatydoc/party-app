@@ -1,20 +1,19 @@
 import Image from "next/image";
 import classes from "./HomePage.module.scss";
-import { Layout } from "@/components/Layout/Layout";
+import { NextPage } from "next";
 
-export default function HomePage() {
+const HomePage: NextPage = () => {
   return (
-    <Layout>
-      <div>
-        <Image
-          className={classes.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-    </Layout>
+    <div>
+      <Image
+        className={classes.logo}
+        src="/next.svg"
+        alt="Next.js Logo"
+        width={180}
+        height={37}
+        priority
+      />
+    </div>
   );
-}
+};
+export default HomePage;

@@ -1,12 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Menu } from "primereact/menu";
-import { MenuItem } from "primereact/menuitem";
 
 import { Button } from "primereact/button";
-import styles from "./Sidebar.module.scss";
+import classes from "./Sidebar.module.scss";
 import classNames from "classnames";
+import { routes } from "@/core/configs/variables";
+import { Navigation } from "./Navigation/Navigation";
 
 interface SidebarProps {
   sidebarVisible: boolean;
@@ -17,33 +16,29 @@ export const Sidebar = ({
   sidebarVisible,
   sidebarActiveHandler,
 }: SidebarProps) => {
-  const router = useRouter();
-  const items: MenuItem[] = [
+  const navItems = [
+    { label: "Discover", href: routes.EVENTS, icon: "pi pi-calendar" },
+    { label: "Artists", href: routes.ARTISTS, icon: "pi pi-users" },
     {
-      label: "Events",
-      icon: "pi pi-calendar",
-      command: () => router.push(`/events`),
-    },
-    {
-      label: "Artists",
+      label: "Subscriptions",
+      href: routes.SUBSCRIPTIONS,
       icon: "pi pi-users",
-      command: () => router.push(`/artists`),
     },
-    {
-      label: "My subscriptions",
-      icon: "pi pi-users",
-      command: () => router.push(`/subscriptions`),
-    },
+    // ...(categories?.map((category) => ({
+    //   label: category.name,
+    //   href: `${routes.CATEGORIES}/${category.id}`,
+    //   icon: category.icon || "pi pi-user",
+    // })) || []),
   ];
 
   return (
     <div
-      className={classNames(styles.sidebarWrapper, {
-        [styles.active]: sidebarVisible,
+      className={classNames(classes.sidebarWrapper, {
+        [classes.active]: sidebarVisible,
       })}
       onClick={sidebarActiveHandler}>
-      <aside className={styles.sidebar}>
-        <div className={styles.header}>
+      <aside className={classes.sidebar}>
+        <div className={classes.header}>
           <Button
             onClick={sidebarActiveHandler}
             icon="pi pi-times"
@@ -52,9 +47,9 @@ export const Sidebar = ({
             text
             aria-label="Filter"
           />
-          <Link href="/">Logo</Link>
+          <Link href={routes.HOME}>Logo</Link>
         </div>
-        <Menu model={items} />
+        <Navigation navLinks={navItems} />
       </aside>
     </div>
   );
