@@ -4,33 +4,33 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classes from "./Navigation.module.scss";
 
-interface Navlink {
-  href: string;
+interface INavlink {
+  path: string;
   label: string;
   icon: string;
 }
 
-interface NavProps {
-  navLinks: Navlink[];
+interface INavProps {
+  navLinks: INavlink[];
 }
 
-export const Navigation = ({ navLinks }: NavProps) => {
+export const Navigation = ({ navLinks }: INavProps) => {
   const pathname = usePathname();
 
   return (
     <nav>
       <ul>
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
+        {navLinks.map(({ path, label, icon }) => {
+          const isActive = pathname === path;
           return (
-            <li key={link.label}>
+            <li key={label}>
               <Link
-                href={link.href}
+                href={path}
                 className={classNames(classes.link, {
                   [classes.active]: isActive,
                 })}>
-                <i className={link.icon}></i>
-                <p>{link.label}</p>
+                <i className={icon}></i>
+                <p>{label}</p>
               </Link>
             </li>
           );

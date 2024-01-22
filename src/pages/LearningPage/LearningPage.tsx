@@ -2,7 +2,7 @@ import { routes } from "@/core/configs/variables";
 import { NextPage } from "next";
 
 import classes from "./LearningPage.module.scss";
-import { PrivateLink } from "@/components/ui/PrivateLink/PrivateLink";
+import { PrivateLink } from "@/modules/SignIn/components/ui/PrivateLink/PrivateLink";
 
 const LearningPage: NextPage = () => {
   return (

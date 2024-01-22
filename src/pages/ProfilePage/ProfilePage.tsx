@@ -1,6 +1,5 @@
-import { routes } from "@/core/configs/variables";
+import { Profile } from "@/modules/Profile/Profile";
 import { NextPage } from "next";
-import Link from "next/link";
 
 interface IProfilePageProps {
   session: {
@@ -13,8 +12,9 @@ interface IProfilePageProps {
 const ProfilePage: NextPage<IProfilePageProps> = ({ session }) => {
   return (
     <>
-      <h2>{session?.user?.name}</h2>
-      <Link href={routes.MY_EVENTS}>My Events</Link>
+      {/* <h2>{session?.user?.name}</h2>
+      <Link href={routes.MY_EVENTS}>My Events</Link> */}
+      <Profile session={session} />
     </>
   );
 };

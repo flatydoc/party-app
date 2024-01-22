@@ -5,12 +5,12 @@ import { FC } from "react";
 import classes from "./MyEventListItem.module.scss";
 import { routes } from "@/core/configs/variables";
 
-interface EventProps {
+interface IEventProps {
   event: IEvent;
 }
 
-export const MyEventListItem: FC<EventProps> = ({ event }) => {
-  const handleClick = (e) => {
+export const MyEventListItem: FC<IEventProps> = ({ event }) => {
+  const handleClick = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     console.log(`event ${event.id} deleted`);
   };

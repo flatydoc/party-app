@@ -7,7 +7,7 @@ import classNames from "classnames";
 import { routes } from "@/core/configs/variables";
 import { Navigation } from "./Navigation/Navigation";
 
-interface SidebarProps {
+interface ISidebarProps {
   sidebarVisible: boolean;
   sidebarActiveHandler: () => void;
 }
@@ -15,13 +15,13 @@ interface SidebarProps {
 export const Sidebar = ({
   sidebarVisible,
   sidebarActiveHandler,
-}: SidebarProps) => {
+}: ISidebarProps) => {
   const navItems = [
-    { label: "Discover", href: routes.EVENTS, icon: "pi pi-calendar" },
-    { label: "Artists", href: routes.ARTISTS, icon: "pi pi-users" },
+    { label: "Discover", path: routes.EVENTS, icon: "pi pi-calendar" },
+    { label: "Artists", path: routes.ARTISTS, icon: "pi pi-users" },
     {
       label: "Subscriptions",
-      href: routes.SUBSCRIPTIONS,
+      path: routes.SUBSCRIPTIONS,
       icon: "pi pi-users",
     },
     // ...(categories?.map((category) => ({

@@ -1,4 +1,4 @@
-import { authConfig } from "@/core/configs/auth";
+import { authConfig } from "@/modules/SignIn/core/configs/auth";
 import ProfilePage from "@/pages/ProfilePage/ProfilePage";
 import { Metadata } from "next";
 import { getServerSession } from "next-auth";
@@ -9,21 +9,27 @@ import { getServerSession } from "next-auth";
 //   };
 // }
 
-interface Session {
+interface ISession {
   user: {
     name: string;
+    email: string;
   };
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const session: Session = await getServerSession(authConfig);
-  return {
-    title: `${session.user.name} | PartyApp`,
-  };
+  const session: ISession | null = await getServerSession(authConfig);
+  if (session) {
+    return {
+      title: `${session.user.name} | PartyApp`,
+    };
+  }
+  throw new Error("No auth");
 }
 
 export default async function Profile() {
-  const session: Session = await getServerSession(authConfig);
-
-  return <ProfilePage session={session} />;
+  const session: ISession | null = await getServerSession(authConfig);
+  if (session) {
+    return <ProfilePage session={session} />;
+  }
+  throw new Error("No auth");
 }

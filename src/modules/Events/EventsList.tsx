@@ -20,7 +20,7 @@ export const EventsList: FC = () => {
 
   if (!events || events.length === 0) {
     // eslint-disable-next-line react/no-unescaped-entities
-    return <p>We can't find projects that match your search</p>;
+    return <p>We can\'t find projects that match your search</p>;
   }
 
   return (

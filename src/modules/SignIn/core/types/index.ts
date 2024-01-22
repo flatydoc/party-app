@@ -1,9 +1,4 @@
-import {
-  Control,
-  FieldErrors,
-  UseFormHandleSubmit,
-  UseFormWatch,
-} from "react-hook-form";
+import { Control, FieldErrors, UseFormHandleSubmit } from "react-hook-form";
 
 export type LoginData = {
   email: string;

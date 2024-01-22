@@ -10,7 +10,7 @@ export const routes = {
   LEARNING: "/learning",
   MY_EVENTS: "/profile/events",
   ADD_EVENT: "/profile/events/add",
-  SIGN_IN: "/api/auth/signin",
+  SIGN_IN: "/signin",
   SIGN_UP: "/signup",
   SUBSCRIPTIONS: "/subscriptions",
 };
